@@ -352,5 +352,6 @@ bool music_mask_user(uint16_t keycode) {
 }
 
 void matrix_init_user() {
-  steno_set_mode(STENO_MODE_GEMINI); // or STENO_MODE_BOLT
+  // steno_set_mode(STENO_MODE_GEMINI); // or STENO_MODE_BOLT
+  steno_set_mode(STENO_MODE_BOLT); // or STENO_MODE_BOLT
 }
