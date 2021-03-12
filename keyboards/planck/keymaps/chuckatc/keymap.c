@@ -103,20 +103,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Plover layer (http://opensteno.org)
  * ,-----------------------------------------------------------------------------------.
- * |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |   #  |
+ * |   S  |   T  |   P  |   H  |   *  |      |   *  |   F  |   P  |   L  |   T  |   D  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   S  |   T  |   P  |   H  |   *  |   *  |   F  |   P  |   L  |   T  |   D  |
+ * |   S  |   K  |   W  |   R  |   *  |      |   *  |   R  |   B  |   G  |   S  |   Z  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   S  |   K  |   W  |   R  |   *  |   *  |   R  |   B  |   G  |   S  |   Z  |
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Exit |      |      |      |   A  |   O  |   E  |   U  |      |      |      |      |
+ * | Exit |      |      |   A  |   O  |   #  |   E  |   U  |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_PLOVER] = LAYOUT_planck_grid(
-    STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM, STN_NUM,
-    XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, STN_ST1, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-    XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, STN_ST2, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
-    EXT_PLV, XXXXXXX, XXXXXXX, XXXXXXX, STN_A,   STN_O,   STN_E,   STN_U,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+    STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, XXXXXXX, STN_ST1, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
+    STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, XXXXXXX, STN_ST2, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    EXT_PLV, XXXXXXX, XXXXXXX, STN_A,   STN_O,   STN_NUM, STN_E,   STN_U,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Mouse Layer
