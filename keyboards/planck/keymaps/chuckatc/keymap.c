@@ -175,6 +175,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         print("mode just switched to qwerty and this is a huge string\n");
         set_single_persistent_default_layer(_QWERTY);
+        #ifdef RGBLIGHT_ENABLE
+          rgblight_sethsv(HSV_TEAL);
+        #endif
       }
       return false;
       break;
@@ -215,6 +218,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           stop_all_notes();
           PLAY_SONG(plover_song);
         #endif
+        #ifdef RGBLIGHT_ENABLE
+          rgblight_sethsv(HSV_PURPLE);
+        #endif
         layer_off(_RAISE);
         layer_off(_LOWER);
         layer_off(_ADJUST);
@@ -232,6 +238,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         #ifdef AUDIO_ENABLE
           PLAY_SONG(plover_gb_song);
+        #endif
+        #ifdef RGBLIGHT_ENABLE
+          rgblight_sethsv(HSV_TEAL);
         #endif
         layer_off(_PLOVER);
       }
