@@ -50,7 +50,7 @@ enum planck_keycodes {
 
 #define LT_RAISE LT(_RAISE, KC_TAB)
 #define LT_NAV   LT(_NAV,   KC_SPC)
-#define LT_NUMCL  LT(_NUMPAD, KC_CAPS)
+#define LT_NUMCL LT(_NUMPAD, KC_CAPS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Mouse Layer
  * keyboards/planck/keymaps/am/keymap.c
  * ,-----------------------------------------------------------------------------------.
- * |      |      |ACCL0 |ACCL1 |ACCL2 |ACCL2 |WHL_Dn|WHL_L |  Up  |WHL_R | BTN2 |      |
+ * |      |      |ACCL0 |ACCL1 |ACCL2 |ACCL2 |WHL_Dn|WHL_R |  Up  |WHL_L | BTN2 |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      | BTN3 | BTN1 | BTN4 |WHL_Up| Left | Down |Right |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_MOUSE] = LAYOUT_planck_grid(
-  _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, KC_ACL2, KC_WH_D, KC_WH_L, KC_MS_U, KC_WH_R, KC_BTN2, _______,
+  _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, KC_ACL2, KC_WH_D, KC_WH_R, KC_MS_U, KC_WH_L, KC_BTN2, _______,
   _______, _______, _______, KC_BTN3, KC_BTN1, KC_BTN4, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
   _______, _______, _______, _______, KC_BTN2, KC_BTN5, _______, KC_BTN1, _______, _______, _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
