@@ -34,3 +34,10 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
+
+// https://www.reddit.com/r/olkb/comments/72u8ou/qmk_mouse_keys_rock/
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_MAX_SPEED 7
+#define MOUSEKEY_WHEEL_DELAY 0
