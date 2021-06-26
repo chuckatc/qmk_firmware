@@ -111,20 +111,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Plover layer (http://opensteno.org)
  * ,-----------------------------------------------------------------------------------.
- * |   S  |   T  |   P  |   H  |   *  | Exit |   *  |   F  |   P  |   L  |   T  |   D  |
+ * |      |   S  |   T  |   P  |   H  |   *  |   *  |   F  |   P  |   L  |   T  |   D  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   S  |   K  |   W  |   R  |   *  | Exit |   *  |   R  |   B  |   G  |   S  |   Z  |
+ * |      |   S  |   K  |   W  |   R  |   *  |   *  |   R  |   B  |   G  |   S  |   Z  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Mouse |      |   #  |   A  |   O  |   #  |   E  |   U  |   #  |      |      |      |
+ * |Mouse |      |      |   #  |   A  |   O  |   E  |   U  |   #  |      |      | Exit |
  * `-----------------------------------------------------------------------------------'
  */
 [_PLOVER] = LAYOUT_planck_grid(
-    STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, EXT_PLV, STN_ST1, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
-    STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, EXT_PLV, STN_ST2, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
+    XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, STN_ST1, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
+    XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, STN_ST2, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    MOUSE,   XXXXXXX, STN_NUM, STN_A,   STN_O,   STN_NUM, STN_E,   STN_U,   STN_NUM, XXXXXXX, XXXXXXX, XXXXXXX
+    MOUSE,   XXXXXXX, XXXXXXX, STN_NUM, STN_A,   STN_O,   STN_E,   STN_U,   STN_NUM, XXXXXXX, XXXXXXX, EXT_PLV
 ),
 
 /* Mouse Layer
@@ -398,5 +398,4 @@ bool music_mask_user(uint16_t keycode) {
 
 void matrix_init_user() {
   steno_set_mode(STENO_MODE_GEMINI); // or STENO_MODE_BOLT
-  // steno_set_mode(STENO_MODE_BOLT); // or STENO_MODE_BOLT
 }
