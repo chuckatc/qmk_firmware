@@ -25,6 +25,7 @@ enum planck_layers {
   _RAISE,
   _PLOVER,
   _MOUSE,
+  _MOUSE2,
   _NUMPAD,
   _NAV,
   _ADJUST
@@ -40,6 +41,7 @@ enum planck_keycodes {
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 #define MOUSE MO(_MOUSE)
+#define MOUSE2 MO(_MOUSE2)
 #define NUMPAD MO(_NUMPAD)
 #define NAV    MO(_NAV)
 
@@ -63,14 +65,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+------+------+------+------+------+------+------+------+------+------+-------|
  * |Shift/`|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Sft/Ent|
  * |-------+------+------+------+------+------+------+------+------+------+------+-------|
- * | Mouse |Num/CL| Alt  | GUI  |Lower |Hyp/Sp|Nav/Sp|Raise | Left | Down |  Up  |Right  |
+ * |Num/CL | Mse2 | Alt  | GUI  |Lower |Hyp/Sp|Nav/Sp|Raise | Left | Down |  Up  |Right  |
  * `-------------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
     LT_RAISE, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     CTL_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     SFT_GRV,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_ENT,
-    MOUSE,    LT_NUMCL,KC_LALT, KC_LGUI, LOWER,   HYPR_SPC,LT_NAV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    LT_NUMCL, MOUSE2,  KC_LALT, KC_LGUI, LOWER,   HYPR_SPC,LT_NAV,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower
@@ -115,16 +117,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   S  |   K  |   W  |   R  |   *  |   *  |   R  |   B  |   G  |   S  |   Z  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      | Exit |
+ * |      | Mse2 |      |      |      |      |      |      |      |      |      | Exit |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Mouse |      |      |   #  |   A  |   O  |   E  |   U  |   #  |      |      | Exit |
+ * |      | Mse2 |      |   #  |   A  |   O  |   E  |   U  |   #  |      |      | Exit |
  * `-----------------------------------------------------------------------------------'
  */
 [_PLOVER] = LAYOUT_planck_grid(
     XXXXXXX, STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1, STN_ST1, STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR,
     XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2, STN_ST2, STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, EXT_PLV,
-    MOUSE,   XXXXXXX, XXXXXXX, STN_NUM, STN_A,   STN_O,   STN_E,   STN_U,   STN_NUM, XXXXXXX, XXXXXXX, EXT_PLV
+    XXXXXXX, MOUSE2,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, EXT_PLV,
+    XXXXXXX, MOUSE2,  XXXXXXX, STN_NUM, STN_A,   STN_O,   STN_E,   STN_U,   STN_NUM, XXXXXXX, XXXXXXX, EXT_PLV
 ),
 
 /* Mouse Layer
@@ -145,6 +147,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, _______, _______, _______, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
   _______, KC_ACL0, KC_ACL1, KC_ACL2, KC_BTN1, KC_BTN2, _______, KC_BTN1, KC_BTN3, KC_BTN2, _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+
+/* Mouse Layer 2
+ * ,-----------------------------------------------------------------------------------.
+ * |      |      |      |      |      |      |WHL_Dn|WHL_R |  Up  |WHL_L | BTN2 |      |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * |      |      |      |      |      |      |WHL_Up| Left | Down |Right |      |      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * |      |ACCL0 |ACCL1 |ACCL2 | BTN1 | BTN2 |      | BTN1 | BTN3 | BTN2 |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |             |      |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+
+[_MOUSE2] = LAYOUT_planck_grid(
+  _______, _______, _______, _______, _______, _______, KC_WH_D, KC_WH_R, KC_MS_U, KC_WH_L, _______, _______,
+  _______, _______, _______, _______, _______, _______, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
+  _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, KC_BTN1, KC_BTN3, KC_BTN2, _______, _______,
+  _______, _______, _______, KC_LGUI, KC_BTN1, KC_BTN2, KC_BTN3, _______, _______, _______, _______, _______
 ),
 
 /* Numpad Layer
